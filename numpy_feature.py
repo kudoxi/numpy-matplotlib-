@@ -14,18 +14,20 @@ print(A)
 print(B.real)
 #如果去掉两个特征
 eigvals[2:] = 0 #抹掉后面两个特征值
-C = np.mat(eigvecs) * np.mat(np.diag(eigvals))*np.mat(eigvecs)
+C = np.mat(eigvecs) * np.mat(np.diag(eigvals))*np.mat(eigvecs).I
 print(C.real)
 
+
 '''
+
 ###################################　图片特征提取　############################################
 #一定要方阵图片
 image = sm.imread('da_data/lily.jpg',True)#True　灰度处理
 #print(image.shape)
 #对image提取特征值和特征向量
 eigvals,eigvecs = np.linalg.eig(image)
-#eigvals[200:] = 0
-image2 = np.mat(eigvecs) * np.mat(np.diag(eigvals))*np.mat(eigvecs)
+eigvals[200:] = 0
+image2 = np.mat(eigvecs) * np.mat(np.diag(eigvals))*np.mat(eigvecs).I
 print("image:",image)
 print("image2:",image2)
 
