@@ -4,7 +4,7 @@ import numpy as np
 pros = np.array(['Apple','Huawei','Mi','OPPO','VIVO'])
 pric = np.array([8888,4999,2999,3999,3999])
 vols = np.array([100,200,70,80,90])
-#np.msort()
+print(np.msort(vols))
 #联合间接排序
 indies = np.lexsort((vols,pric))
 print(pros[indies])
